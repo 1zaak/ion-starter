@@ -23,6 +23,14 @@
                              [:inv/sku :inv/size :inv/color])
       edn/write-str))
 
+(defn get-items-by-size
+  "Lambda ion that returns items matching size."
+  [{:keys [input]}]
+  (-> (starter/get-db)
+      (starter/get-items-by-size (-> input json/read-str keyword)
+                                 [:inv/sku :inv/size :inv/color])
+      edn/write-str))
+
 (defn ensure-sample-dataset
   "Lambda ion that creates database and transacts sample data."
   [_]

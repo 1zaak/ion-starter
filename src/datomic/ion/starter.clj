@@ -62,3 +62,11 @@
          :in $ ?type pull-expr
          :where [?e :inv/type ?type]]
        db type pull-expr))
+
+(defn get-items-by-size
+  "Returns pull maps describing all items matching size"
+  [db size pull-expr]
+  (d/q '[:find (pull ?e pull-expr)
+         :in $ ?size pull-expr
+         :where [?e :inv/size ?size]]
+       db size pull-expr))
