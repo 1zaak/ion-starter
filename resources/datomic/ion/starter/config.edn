@@ -1,5 +1,5 @@
 {:server-type :ion
- :region "us-east-1"
- :system "mbrainz-stu"
- :endpoint "http://entry.mbrainz-stu.us-east-1.datomic.net:8182"
+ :region "ap-southeast-1"
+ :system "jom-digital"
+ :endpoint "http://entry.jom-digital.ap-southeast-1.datomic.net:8182"
  :proxy-port 8182}
