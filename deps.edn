@@ -1,10 +1,18 @@
 ; Copyright (c) Cognitect, Inc.
 ;; All rights reserved.
 
-{:paths ["src" "resources"]
- :deps {com.cognitect/anomalies {:mvn/version "0.1.12"}
-        com.datomic/client-cloud {:mvn/version "0.8.81"}
-        com.datomic/ion {:mvn/version "0.9.35"}
-        org.clojure/clojure {:mvn/version "1.10.1"}
-        org.clojure/data.json {:mvn/version "0.2.6"}}
- :mvn/repos {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}}}
+{:paths     ["src" "resources"]
+ :deps      {com.cognitect/anomalies  {:mvn/version "0.1.12"}
+             com.datomic/client-cloud {:mvn/version "0.8.81"}
+             com.datomic/ion          {:mvn/version "0.9.35"}
+             org.clojure/clojure      {:mvn/version "1.10.1"}
+             org.clojure/data.json    {:mvn/version "0.2.6"}}
+ :mvn/repos {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}}
+ :aliases
+            {:ion-dev
+             {:deps      {com.datomic/ion-dev {:mvn/version "0.9.243"}}
+              :main-opts ["-m" "datomic.ion.dev"]}
+             :mvn/repos
+             {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}
+              }}
+ }
